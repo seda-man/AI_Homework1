@@ -7,4 +7,5 @@ public interface Frontier {
 	Node removeNode();
 	boolean contains(Node node);
 	int maxNumberOfNodes();
+	int size();
 }

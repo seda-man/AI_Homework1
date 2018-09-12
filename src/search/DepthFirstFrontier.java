@@ -51,4 +51,9 @@ public class DepthFirstFrontier implements Frontier {
 	public int maxNumberOfNodes() {
 		return numberOfAddedNodes;
 	}
+
+	@Override
+	public int size() {
+		return frontier != null ? frontier.size() : 0;
+	}
 }

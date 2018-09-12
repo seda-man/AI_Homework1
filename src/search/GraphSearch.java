@@ -18,12 +18,12 @@ public class GraphSearch implements Search {
 		frontier.clear();
 		frontier.addNode(root);
 		while (!frontier.isEmpty()) {
+			System.out.println("Size of frontier while processing current node " + frontier.size());
 			Node currentNode = frontier.removeNode();
 			visited.add(currentNode);
 			if (test.isGoal(currentNode.state)) {
 				return currentNode;
 			} else {
-				System.out.println(frontier.maxNumberOfNodes());
 				for (Action action : currentNode.state.getApplicableActions()) {
 					State newState = currentNode.state.getActionResult(action);
 					Node newNode = new Node(currentNode, action, newState);

@@ -12,6 +12,7 @@ public class TreeSearch implements Search {
 		frontier.clear();
 		frontier.addNode(root);
 		while (!frontier.isEmpty()) {
+			System.out.println("Size of frontier while processing current node " + frontier.size());
 			Node currentNode = frontier.removeNode();
 			if (test.isGoal(currentNode.state)) {
 				return currentNode;
