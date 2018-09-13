@@ -11,6 +11,8 @@ import search.Search;
 import search.TreeSearch;
 
 public class BFTS_Demo {
+
+
 	public static void main(String[] args) {
 		System.out.println("This is a demonstration of breadth-first tree search on 8-puzzle");
 		System.out.println();
@@ -21,38 +23,38 @@ public class BFTS_Demo {
 				{ 8, 1, 3 },
 				{ 5, 0, 6 }
 		});
-
-
-
-		// I tried with this one and got for graph search with bff
-		// size of frontier at solution time: 63
-		// max size of frontier: 98
-
-		// for graph search with dff
-		// size of frontier at solution time: 6
-		// max size of frontier: 9
-
-		// for tree search with bff
-		// size of frontier at solution time: 63
-		// max size of frontier: 98
-
-		// for tree search with dff
-		// size of frontier at solution time: 6
-		// max size of frontier: 9
-
-		// so in this case it wasn't important what structure we are using
-		// but it was important what algorithm I used and dff performed much better
-//		Tiles initialConfiguration = new Tiles(new int[][] {
-//				{ 1, 0, 2 },
-//				{ 4, 5, 3 },
-//				{ 7, 8, 6 }
-//		});
-
-
-		GoalTest goalTest = new TilesGoalTest();
-		Node root = new Node(null, null, initialConfiguration);
-		Search s;
-		NPuzzlePrinting print = new NPuzzlePrinting();
+//
+//
+//
+//		// I tried with this one and got for graph search with bff
+//		// size of frontier at solution time: 63
+//		// max size of frontier: 98
+//
+//		// for graph search with dff
+//		// size of frontier at solution time: 6
+//		// max size of frontier: 9
+//
+//		// for tree search with bff
+//		// size of frontier at solution time: 63
+//		// max size of frontier: 98
+//
+//		// for tree search with dff
+//		// size of frontier at solution time: 6
+//		// max size of frontier: 9
+//
+//		// so in this case it wasn't important what structure we are using
+//		// but it was important what algorithm I used and dff performed much better
+////		Tiles initialConfiguration = new Tiles(new int[][] {
+////				{ 1, 0, 2 },
+////				{ 4, 5, 3 },
+////				{ 7, 8, 6 }
+////		});
+//
+//
+//		GoalTest goalTest = new TilesGoalTest();
+//		Node root = new Node(null, null, initialConfiguration);
+//		Search s;
+//		NPuzzlePrinting print = new NPuzzlePrinting();
 
 		// to try the solutions uncomment the blocks of code :))
 
