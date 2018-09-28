@@ -25,10 +25,16 @@ public class BFTS_Demo {
 				{ 5, 0, 6 }
 		});
 
-//		uninformedSearch(initialConfiguration);
+		uninformedSearch(initialConfiguration);
 
 
 		informedSearch(initialConfiguration);
+
+//		after comparing results of informed and uninformed searches
+//		it is clear that during my tests (the comparision is made after
+//		observing results run on the configuration I proposed for
+//		uninformed searches) informed searches performed much better
+//		than the uniformed searches
 
 	}
 
