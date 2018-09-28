@@ -33,6 +33,15 @@ public class BFTS_Demo {
 	}
 
 
+//	the initial configuration that we pass works fine for A* algorithms
+//	both on tree and graph searches, but the best-first search is taking
+//	too much time to solve the problem (haven't checked how much, but the
+//	size of frontier was over 1000000 at the stop time
+//	I suggest you to try it with different initial configuration
+//	So far with the initial configuration both tree and graph searches
+//	gave the same result: 13 steps to the goal state,
+//  847 nodes stored at the frontier and 1347 created nodes
+
 	public static void informedSearch(Tiles initialConfiguration) {
 		GoalTest goalTest = new TilesGoalTest();
 		Node root = new Node(null, null, initialConfiguration);
@@ -79,36 +88,30 @@ public class BFTS_Demo {
 
 	}
 
+//	  I tried with this
+//	  { 1, 0, 2 },
+//	  { 4, 5, 3 },
+//	  { 7, 8, 6 }
+//	  configuration and got for graph search with bff
+//	  size of frontier at solution time: 63
+//	  max size of frontier: 98
+//
+//	  for graph search with dff
+//	  size of frontier at solution time: 6
+//	  max size of frontier: 9
+//
+//	  for tree search with bff
+//	  size of frontier at solution time: 63
+//	  max size of frontier: 98
+//
+//	  for tree search with dff
+//	  size of frontier at solution time: 6
+//	  max size of frontier: 9
+//
+//	  so in this case it wasn't important what structure we are using
+//	  but it was important what algorithm I used and dff performed much better
+
 	public static void uninformedSearch(Tiles initialConfiguration) {
-
-
-
-
-		// I tried with this one and got for graph search with bff
-		// size of frontier at solution time: 63
-		// max size of frontier: 98
-
-		// for graph search with dff
-		// size of frontier at solution time: 6
-		// max size of frontier: 9
-
-		// for tree search with bff
-		// size of frontier at solution time: 63
-		// max size of frontier: 98
-
-		// for tree search with dff
-		// size of frontier at solution time: 6
-		// max size of frontier: 9
-
-		// so in this case it wasn't important what structure we are using
-		// but it was important what algorithm I used and dff performed much better
-//		Tiles initialConfiguration = new Tiles(new int[][] {
-//				{ 1, 0, 2 },
-//				{ 4, 5, 3 },
-//				{ 7, 8, 6 }
-//		});
-
-
 		GoalTest goalTest = new TilesGoalTest();
 		Node root = new Node(null, null, initialConfiguration);
 		Search s;
