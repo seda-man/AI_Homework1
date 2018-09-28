@@ -6,6 +6,6 @@ public interface State {
 	Set<? extends Action> getApplicableActions();
 	State getActionResult(Action action);
 
-	boolean equals(State s);
-	int hasCode();
+	boolean equals(Object s);
+	int hashCode();
 }

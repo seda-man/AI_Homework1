@@ -71,8 +71,12 @@ public class Tiles implements State {
 		return new Tiles(width, newTiles, newEmptyTileRow, newEmptyTileColumn);
 	}
 
+	public int[] getTiles(){
+		return tiles;
+	}
+
 	@Override
-	public boolean equals(State s) {
+	public boolean equals(Object s) {
 		if (s == null) {
 			return false;
 		}
@@ -105,7 +109,7 @@ public class Tiles implements State {
 	}
 
 	@Override
-	public int hasCode() {
+	public int hashCode() {
 		return Objects.hash(width, tiles, emptyTileRow, emptyTileColumn);
 	}
 }

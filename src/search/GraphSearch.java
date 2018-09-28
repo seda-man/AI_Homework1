@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class GraphSearch implements Search {
 	private Frontier frontier;
-	private Set<Node> visited = new HashSet<>();
+	private Set<State> visited = new HashSet<>();
 
 	public GraphSearch(Frontier frontier) {
 		this.frontier = frontier;
@@ -20,10 +20,10 @@ public class GraphSearch implements Search {
 		while (!frontier.isEmpty()) {
 			System.out.println("Size of frontier while processing current node " + frontier.size());
 			Node currentNode = frontier.removeNode();
-			visited.add(currentNode);
 			if (test.isGoal(currentNode.state)) {
 				return currentNode;
 			} else {
+				visited.add(currentNode.state);
 				for (Action action : currentNode.state.getApplicableActions()) {
 					State newState = currentNode.state.getActionResult(action);
 					Node newNode = new Node(currentNode, action, newState);
@@ -37,7 +37,7 @@ public class GraphSearch implements Search {
 	}
 
 	public boolean isVisitedOrPresent(Node node) {
-		return visited.contains(node) || frontier.contains(node);
+		return visited.contains(node.state) || frontier.contains(node);
 	}
 
 	@Override
